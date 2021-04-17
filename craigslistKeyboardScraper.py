@@ -30,9 +30,9 @@ for free in freeResults:
         price = free.find(class_='result-price')
         hood = free.find(class_='result-hood')
         print(item.text)
-        print(price.text)
-        print(hood.text)
-        print(f"Buy here: {link}\n")
+        if hood is not None:
+            print(hood.text)
+        print(f"Get here: {link}\n")
 
 print('MUSIC SECTION:\n')
 
@@ -44,7 +44,8 @@ for i in musicResults:
         hood = i.find(class_='result-hood')
         print(item.text)
         print(price.text)
-        print(hood.text)
+        if hood is not None:
+            print(hood.text)
         print(f"Buy here: {link}\n")
 
 # possible use of anonymous lambda function to filter before for loop
